@@ -92,6 +92,7 @@
       <p class="texto-info" style="margin-top: 50px; width:90%;">Hola a todos! Soy Martín Contreras, un programador inquieto con una fuerte afición hacia las nuevas tecnologias, el desarrollo de <span>Sitios Webs Dinámicos</span> y la creación de <span>Aplicaciones Personalizadas</span>. <br> <br> Me inicié en el mundo de la programación estudiando como ingeniero electrónico, lo que me llevó a aprender mucha lógica de programación en lenguajes como <span>C y C++</span>.<br> Esto despertó en mi una curiosidad por aprender y saber como se crean exactamente programas y/o aplicaciones web usando lenguajes como <span>PHP, HTML5, CSS3, JAVASCRIPT</span>.<br>Actualmente me encuentro desarrollando distintos proyectos, tanto para la universidad como proyectos personales que me ayuden a seguir perfeccionando mi stack.<br> <br>Me gusta mucho desarrollar con principios <span>SOLID</span> y soy muy autodidácta cuando se trata de aprender cosas nuevas.<br><br>Actualmente me encuentro estudiando y me interesa saber más de :<br>
       <span class="exp">Patrones de Diseño</span><br>
       <span class="exp">Programación Orientada a Objetos (POO) con PHP y PDO</span><br>
+      <span class="exp">API RESTful con PDO/MySQLi y Docker</span><br>
       <span class="exp">Composer y npm</span><br>
       <span class="exp">Server-Side Security y Base de Datos </span><br>
       <span class="exp">Depuración de código </span><br>
