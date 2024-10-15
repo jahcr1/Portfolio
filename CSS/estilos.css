@@ -435,6 +435,60 @@ a.project-link {
   list-style-type: none;
 }
 
+div.form-container {
+  max-width: 600px;
+  margin: 30px auto;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.7);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  /*background-color: rgba(236, 129, 68, 0.6);*/
+  
+}
+
+.contact-form label {
+  color: rgb(236, 129, 68);
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 5px;
+  padding: 10px 0 10px 25px;
+  border: 2px solid rgb(236, 129, 68);
+  border-radius: 20px;
+  font-size: 1.2rem;
+  
+  
+
+}
+
+.contact-form button {
+  color: white;
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 25px;
+  font-size: 1.8rem;
+  background-color: rgb(236, 129, 68);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  scale: 1.1;
+  filter: drop-shadow(2px 2px 5px white);
+}
+
+
+
 /*  MEDIA QUERY*/
 @media (max-width: 995px) {
   nav.navbar {

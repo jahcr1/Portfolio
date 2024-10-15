@@ -624,10 +624,27 @@
   </section>
 
   <section id="Contact">
-    <h1 class="titulo" style="display:inline-flex; justify-content: center;">Contacto</h1>
-    <p class="texto-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere reprehenderit dignissimos voluptatem nesciunt quae minus delectus corporis molestias harum sint cum modi, velit aut animi minima dolore quos voluptatibus ratione illo, maxime nihil fugiat, nostrum ab laudantium! Est, dolore ducimus.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam autem ea incidunt esse sint aliquam.</p>
-    <p></p>
+    
+    <h1 class="titulo" style="justify-content: start;">Contacto</h1>
+    <p class="texto-info text-start">Si tenés alguna pregunta ó necesitas contactarte conmigo, te invito a escribirme:</p>
+    <div class="form-container">
+      <form action="contacto.php" method="POST" class="contact-form">
+        <label for="nombre">Nombre :</label>
+        <input type="text" id="nombre" name="name" placeholder="Tú Nombre" required autocomplete="off">
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" placeholder="Tú Correo Electrónico" required  autocomplete="off">
+
+        <label for="asunto">Asunto :</label>
+        <input type="text" id="asunto" name="asunto" placeholder="Escribe el Asunto aquí">
+
+        <label for="mensaje">Mensaje :</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Tú Mensaje . . ." required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  
   </section>
 
 
