@@ -390,7 +390,7 @@
       <div class="container">
         <div class="main-content-project">
           <h5 class="project-name text-center">Kuday Store Sitio Oficial </h5>
-          <p class="project-description">Proyecto creado para una tienda virtual tipo <span>e-commerce</span> de diversos artículos.<br>Tiene en su desarrollo distintas tecnoligías aplicadas, pero me centré en aprender y aplicar el uso de <span>PHP</span> para automatizar desde un panel de administración de stock, el despliegue de todos los items de la tienda.</p>
+          <p class="project-description">Proyecto creado para una tienda virtual tipo <span>e-commerce</span> de diversos artículos.<br>Tiene en su desarrollo distintas tecnologías aplicadas, pero me centré en aprender y aplicar el uso de <span>PHP</span> para automatizar desde un panel de administración de stock, el despliegue de todos los items de la tienda.</p>
 
           <div class="body-content-project">
             <div class="img-project">
