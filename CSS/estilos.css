@@ -24,8 +24,8 @@ body {
     /* Capa 1: Degradado oscuro */ linear-gradient(
       to bottom,
       #488199,
-      #3a545c,
-      #0b191f
+      #506d75,
+      #244a5a
     ),
     /* Capa 2: Patrones de íconos de desarrollo */
       url("../imagenes/fondo/patterns/dark-honeycomb.png") repeat center;
@@ -232,11 +232,6 @@ div.button-container {
   margin: 20px auto; /* Centra horizontalmente el contenedor */
 }
 
-i.bi.bi-download {
-  color: black;
-  font-size: 1.8rem;
-  font-weight: 600;
-}
 
 .btn-estilo {
   width: 120px;
@@ -250,6 +245,7 @@ i.bi.bi-download {
   border-radius: 30px;
   background-color: rgb(236, 129, 68);
   transition: 0.1s ease;
+  padding: 8px 0;
 }
 
 .btn-estilo:hover {
@@ -437,8 +433,19 @@ a.project-link {
   list-style-type: none;
 }
 
+/*****    SECCIÓN CONTACTO    *****/
+
+div.datos {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-evenly;  
+  box-sizing: border-box; /* Asegura que padding no desborde el contenedor */
+  flex-wrap: wrap;
+}
+
 div.form-container {
   max-width: 600px;
+  min-width: 600px;
   margin: 30px 0px 0px 20px;
   border-radius: 20px;
   box-shadow: 0 2px 10px rgb(236, 129, 68);
@@ -449,7 +456,7 @@ div.form-container {
   flex-direction: column;
   padding: 20px;
   border-radius: 20px;
-  /*background-color: rgba(236, 129, 68, 0.6);*/
+  background-color: rgba(255, 255, 255, 0.2);
   
 }
 
@@ -466,9 +473,15 @@ div.form-container {
   padding: 10px 0 10px 25px;
   border: 2px solid rgb(236, 129, 68);
   border-radius: 20px;
-  font-size: 1.2rem;
-  
-  
+  font-size: 1.6rem;
+
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #555;
+  font-size: 1.5rem;
+  font-style: italic;
 
 }
 
@@ -487,8 +500,120 @@ div.form-container {
 .contact-form button:hover {
   scale: 1.1;
   filter: drop-shadow(2px 2px 5px white);
+  color: black;
 }
 
+div.contenedor-datos {
+  margin: 30px 0px 0px 20px;
+  padding: 40px 0 10px 40px;
+}
+
+div.contenedor-cvs {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 50px;
+  
+}
+
+div.cvs {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+}
+
+p.texto-cv {
+  font-size: 1.4rem;
+  padding: 5px;
+}
+
+.btn-estilo-cv {
+  width: 140px;
+  height: 40px;
+  margin: 10px auto;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  word-spacing: 15px;
+  border-radius: 30px;
+  background-color: rgb(236, 129, 68);
+  transition: 0.1s ease;
+
+  /* Centrado usando flexbox */
+  display: flex; /* Activar flexbox */
+  justify-content: space-evenly; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+  text-align: center; /* Por si hay varias líneas de texto */
+  padding: 0; /* Asegúrate de que no haya padding adicional */
+}
+
+.btn-estilo-cv:hover {
+  font-size: 1.5rem;
+  background-color: rgb(236, 129, 60);
+  box-shadow: 0 0 15px rgb(245, 243, 243);
+  transform: scale(1.1) translateY(-5px);
+}
+
+
+div.contact-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+p.label-contact-icon {
+  font-size: 1.4rem;
+  margin-top: 10px; 
+  text-align: center;
+}
+
+a.anchor-contact-icon {
+  
+  font-size: 25px;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-self: center;
+  width: 5rem;
+  height: 5rem;
+  background-color: transparent;
+  border: 0.2rem solid rgb(236, 129, 68);
+  border-radius: 50%;
+  margin: 0 1.5rem 3rem 1rem;
+  transition: 0.3s ease;
+  
+}
+
+a.anchor-contact-icon:hover {
+  color: black;
+  transform: scale(1.3) translateY(-5px);
+  background-color: rgb(236, 129, 68);
+  box-shadow: 0 0 25px rgb(236, 129, 68);
+}
+
+a.anchor-contact-icon i {
+  align-self: center;
+}
+
+.input-group-lg .form-control, .input-group-lg .btn {
+  height: 40px; /* Aumenta la altura del input y botón */
+  font-size: 1.5rem; /* Aumenta el tamaño de la fuente */
+  font-weight: 400;
+}
+
+.mensaje-copiado {
+  opacity: 0;
+  visibility: hidden;
+  font-size: 1.25rem;
+  transition: opacity 0.3s ease;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+}
 
 
 /*  MEDIA QUERY*/

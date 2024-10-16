@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->setFrom($_ENV['SMTP_USER'], $_ENV['SMTP_FROM_NAME']);
     $mail->addAddress($_ENV['SMTP_TO_EMAIL']);  // A dónde se enviará el mensaje
     $mail->Subject = $asunto;
-    $mail->Body = "Nombre: $nombre\nCorreo: $email\nMensaje:\n$mensaje";
+    $mail->Body = "Nombre: $nombre\nCorreo: $email\nAsunto: $asunto\nMensaje: $mensaje\n";
 
     $mail->send();
     header("Location: index.php?status=success#Contact");  // Redirigir si se envía correctamente

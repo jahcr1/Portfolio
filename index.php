@@ -2,9 +2,9 @@
 $mensajeQS = '';
 if (isset($_GET['status'])) {
   if ($_GET['status'] === 'success') {
-    $mensajeQS = '<p class="alert alert-success">¡Correo enviado correctamente!</p>';
+    $mensajeQS = '<p class="alert alert-success" style="font-size: 1.3rem; font-weight:bold; padding-left: 22px; width:50%; margin-left:auto; margin-right:auto;">¡Correo enviado correctamente!</p>';
   } elseif ($_GET['status'] === 'error') {
-    $mensajeQS = '<p class="alert alert-danger">Hubo un error al enviar el correo. Inténtalo de nuevo.</p>';
+    $mensajeQS = '<p class="alert alert-danger" style="font-size: 1.3rem; padding-left: 20px;">Hubo un error al enviar el correo. Inténtalo de nuevo.</p>';
   }
 }
 ?>
@@ -641,25 +641,65 @@ if (isset($_GET['status'])) {
 
     <!-- Mostrar el mensaje si existe -->
     <?php echo $mensajeQS; ?>
+    <div class="datos">
+      
+      <div class="form-container">
+        <form action="enviarmail.php" method="POST" class="contact-form">
+          <label for="nombre">Nombre :</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tú Nombre" required autocomplete="off">
 
-    <div class="form-container">
-      <form action="enviarmail.php" method="POST" class="contact-form">
-        <label for="nombre">Nombre :</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tú Nombre" required autocomplete="off">
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" placeholder="Tú Correo Electrónico" required autocomplete="off">
 
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" placeholder="Tú Correo Electrónico" required autocomplete="off">
+          <label for="asunto">Asunto :</label>
+          <input type="text" id="asunto" name="asunto" placeholder="Escribe el Asunto aquí" required autocomplete="off">
 
-        <label for="asunto">Asunto :</label>
-        <input type="text" id="asunto" name="asunto" placeholder="Escribe el Asunto aquí" required>
+          <label for="mensaje">Mensaje :</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Tú Mensaje . . ." required></textarea>
 
-        <label for="mensaje">Mensaje :</label>
-        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Tú Mensaje . . ." required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
 
-        <button type="submit">Enviar</button>
-      </form>
+      <div class="contenedor-datos">
+        <div class="contenedor-cvs">
+          <div class="cvs">
+            <p class="texto-cv text-center">Podés ver mi CV acá :</p>
+            <a href="componentes/vercv.php" class="btn btn-estilo-cv" target="_blank">CV<i class="bi bi-eye"></i></a>
+
+          </div>
+          <div class="cvs">
+            <p class="texto-cv text-center">Sinó podés descargarlo acá :</p>
+            <a role="button" class="btn btn-estilo-cv" href="componentes/cv.pdf" download="cv.pdf" rel="noopener noreferrer" target="_blank" title="Descargar Curriculum Vitae">CV <i class="bi bi-download"></i></a>
+          </div>
+        </div>
+        
+        <div class="contact-icons">
+          <p class="label-contact-icon">LinkedIN</p>
+          <a href="https://www.linkedin.com/in/martin-contreras-/" class="anchor-contact-icon" target="_blank" title="Te lleva a mi LinkedIn"><i class="bi bi-linkedin"></i></a>
+          
+          <p class="label-contact-icon">WhatsApp</p>
+          <a href="https://wa.me/5493516451510?text=Hola%20quiero%20más%20información" class="anchor-contact-icon" target="_blank" title="Escribime a mi WhatsApp directamente"><i class="bi bi-whatsapp"></i></a>
+        </div>
+
+        <div class="copy-mail">
+          <div class="container mt-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10">
+                <div class="input-group input-group-lg ">
+                  <input type="text" class="form-control"  value="martin.contreras.dev@gmail.com" id="correo" readonly>
+                  <button class="btn btn-success" type="button" id="btn-copiar">Copiar</button>
+                </div>
+                <div class="mt-2">
+                  <span id="mensaje-copiado" class="mensaje-copiado text-success">¡Copiado al portapapeles!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-
   </section>
 
 
@@ -672,6 +712,33 @@ if (isset($_GET['status'])) {
 
 
   <!-- *********  SCRIPTS  ********** -->
+
+
+  <!--    SCRIPT PARA COPIAR EMAIL  -->
+  <script>
+    const btnCopiar = document.getElementById('btn-copiar');
+    const inputCorreo = document.getElementById('correo');
+    const mensajeCopiado = document.getElementById('mensaje-copiado');
+
+    btnCopiar.addEventListener('click', () => {
+      // Selecciona el contenido del input
+      inputCorreo.select();
+      inputCorreo.setSelectionRange(0, 99999); // Compatibilidad con móviles
+
+      // Copia el texto al portapapeles
+      navigator.clipboard.writeText(inputCorreo.value)
+        .then(() => {
+          // Muestra el mensaje de "¡Copiado!"
+          mensajeCopiado.classList.add('visible');
+
+          // Oculta el mensaje después de 2 segundos
+          setTimeout(() => {
+            mensajeCopiado.classList.remove('visible');
+          }, 2000);
+        })
+        .catch(err => console.error('Error al copiar: ', err));
+    });
+  </script>
 
 
 
