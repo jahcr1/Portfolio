@@ -626,7 +626,7 @@
   <section id="Contact">
     
     <h1 class="titulo" style="justify-content: start;">Contacto</h1>
-    <p class="texto-info text-start">Si tenés alguna pregunta ó necesitas contactarte conmigo, te invito a escribirme:</p>
+    <p class="texto-info text-center">Si tenés alguna pregunta ó necesitas contactarte conmigo, te invito a escribirme:</p>
     <div class="form-container">
       <form action="contacto.php" method="POST" class="contact-form">
         <label for="nombre">Nombre :</label>
@@ -636,7 +636,7 @@
         <input type="email" id="email" name="email" placeholder="Tú Correo Electrónico" required  autocomplete="off">
 
         <label for="asunto">Asunto :</label>
-        <input type="text" id="asunto" name="asunto" placeholder="Escribe el Asunto aquí">
+        <input type="text" id="asunto" name="asunto" placeholder="Escribe el Asunto aquí" required>
 
         <label for="mensaje">Mensaje :</label>
         <textarea id="mensaje" name="mensaje" rows="5" placeholder="Tú Mensaje . . ." required></textarea>

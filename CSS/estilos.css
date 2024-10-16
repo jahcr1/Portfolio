@@ -439,9 +439,9 @@ a.project-link {
 
 div.form-container {
   max-width: 600px;
-  margin: 30px auto;
+  margin: 30px 0px 0px 20px;
   border-radius: 20px;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 10px rgb(236, 129, 68);
 }
 
 .contact-form {
