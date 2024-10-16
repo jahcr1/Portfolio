@@ -628,7 +628,7 @@
     <h1 class="titulo" style="justify-content: start;">Contacto</h1>
     <p class="texto-info text-center">Si tenés alguna pregunta ó necesitas contactarte conmigo, te invito a escribirme:</p>
     <div class="form-container">
-      <form action="contacto.php" method="POST" class="contact-form">
+      <form action="enviarmail.php" method="POST" class="contact-form">
         <label for="nombre">Nombre :</label>
         <input type="text" id="nombre" name="name" placeholder="Tú Nombre" required autocomplete="off">
 
