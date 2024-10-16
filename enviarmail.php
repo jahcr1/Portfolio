@@ -13,15 +13,15 @@ $dotenv->load();
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  
+
   $nombre = htmlspecialchars($_POST['nombre']);
   $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
   $asunto = htmlspecialchars($_POST['asunto']);
   $mensaje = htmlspecialchars($_POST['mensaje']);
-  
+
 
   if (!$email) {
-    echo "Correo no válido.";
+    header("Location: index.php?status=error#Contact");  // Redirigir si el email no es válido
     exit;
   }
 
@@ -44,8 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->Body = "Nombre: $nombre\nCorreo: $email\nMensaje:\n$mensaje";
 
     $mail->send();
-    echo 'Mensaje enviado correctamente.';
+    header("Location: index.php?status=success#Contact");  // Redirigir si se envía correctamente
   } catch (Exception $e) {
-    echo "Error al enviar el mensaje: {$mail->ErrorInfo}";
+    header("Location: index.php?status=error#Contact");  // Redirigir si falla el envío
   }
 }
