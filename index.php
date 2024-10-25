@@ -17,6 +17,11 @@ if (isset($_GET['status'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio cr1</title>
 
+  <!-- FAMILIAS TIPOGRAFICAS DE GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Bruno+Ace+SC&family=Chango&family=Clicker+Script&family=Delius+Unicase:wght@400;700&family=Electrolize&family=Geostar+Fill&family=Gwendolyn:wght@400;700&family=Iceberg&family=Iceland&family=Lumanosimo&family=Martian+Mono:wght@100..800&family=Michroma&family=Moo+Lah+Lah&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Shrikhand&family=Syne+Mono&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
   <!-- ICONOS DE DEVICON -->
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
@@ -69,9 +74,9 @@ if (isset($_GET['status'])) {
     </div>
     <div class="main-content-home">
       <div class="home-content">
-        <h1>Hola, soy <span>MARTIN</span></h1>
+        <h1>Hola, soy <span>MARTiN</span></h1>
         <h3 class="texto-tipeado">Soy <span class="text-din"></span><span class="cursor">|</span></h3>
-        <p>Soy Programador Web y Desarrollador de Aplicaciones Web Dinámicas con tecnologías LAMP.<br>Con algo de experiencia y en constante aprendizaje<br> tanto en Front-end como en Back-end.</p>
+        <p>Soy Programador Web y Desarrollador de Aplicaciones Web Dinámicas con tecnologías LAMP. Con algo de experiencia y en constante aprendizaje<br> tanto en Front-end como en Back-end.</p>
       </div>
       <div class="home-iconos-redes">
         <ul class="redes">
