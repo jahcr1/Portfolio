@@ -215,7 +215,7 @@ div.home-img img {
 
 .home-iconos-redes {
   margin: 20px 0;
-  height: 50px;
+  height: auto;
 }
 
 .home-iconos-redes ul {
