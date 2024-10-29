@@ -1016,7 +1016,7 @@ a.anchor-contact-icon i {
 
   div.projects {
     display: grid;
-    grid-template-columns: 1fr; /*grid de 2 columnas iguales*/
+    grid-template-columns: 1fr; /*grid de 1 columna*/
     gap: 20px;
     padding: 20px;
     align-items: stretch;
@@ -1096,9 +1096,11 @@ a.anchor-contact-icon i {
     justify-content: space-evenly;
   }
 
+  
   .foot-project {
-    height: 50px;
-    align-self: flex-start;
+    height: auto;
+    align-self:center;
+    margin-top: 20px;
   }
 
   a.project-link {
@@ -1394,13 +1396,13 @@ a.anchor-contact-icon i {
   /************************************/
 
   section#Home {
-    height: 100vh;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    height: auto;
+    
   }
 
   div.main-content-home {
@@ -1412,7 +1414,7 @@ a.anchor-contact-icon i {
   }
 
   div.home-content {
-    height: 500px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1435,11 +1437,11 @@ a.anchor-contact-icon i {
   }
 
   .texto-tipeado {
-  
+    height: 120px;
     font-size: 4rem;
     font-weight: 600;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     min-width: 250px;
     white-space: wrap;
     overflow: hidden;
@@ -1599,12 +1601,12 @@ a.anchor-contact-icon i {
     */
 
     font-family: "Bruno Ace SC", serif;
-    font-size: 4rem;
+    font-size: 3rem;
     display: flex;
     color: rgb(236, 129, 68);
-    margin-top: 50px;
+    margin-top: 20px;
     margin-bottom: 25px;
-    padding: 10px 50px 10px 0;
+    padding: 10px 10px 10px 0;
     border-bottom: 2px solid rgb(236, 129, 68);
   }
 
@@ -1613,11 +1615,12 @@ a.anchor-contact-icon i {
   /****************************************/
 
   p.texto-info {
-    font-size: 2rem;
-    padding: 20px 0 20px 0;
+    font-size: 1.8rem;
+    padding: 0px 0 20px 0;
     letter-spacing: 0.5px;
     line-height: 3rem;
     text-align: end;
+    margin-top: 10px !important;
   }
 
   p.texto-info span.exp {
@@ -1646,9 +1649,9 @@ a.anchor-contact-icon i {
   /********************************************/
 
   .sub-titles {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     color: rgb(255, 255, 255);
-    margin: 120px 0 0 0;
+    margin: 20px 0 0 0;
     padding: 10px 0;
     text-shadow: -1px 1px black, -2px -2px 15px rgb(236, 129, 68);
   }
@@ -1665,7 +1668,7 @@ a.anchor-contact-icon i {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     padding: 1rem 0;
     display: flex;
     flex-direction: row;
@@ -1692,41 +1695,51 @@ a.anchor-contact-icon i {
 
   div.projects {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /*grid de 2 columnas iguales*/
+    grid-template-columns: 1fr; /*grid de 1 columna*/
     gap: 20px;
-    padding: 20px;
+    padding: 10px;
     align-items: stretch;
+    overflow: hidden; /* Previene desbordamiento */
   }
 
   div.container {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 5px;
+    max-width: 100%; /* Asegura que no exceda el ancho */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
   }
 
   /*  estilos para cada caja contenedor de un proyecto*/
   div.main-content-project {
     background-color: rgb(46, 48, 48);
-    padding: 20px;
+    padding: 15px;
     border: 1px solid darkgoldenrod;
     display: flex;
     flex-direction: column; /* Organiza los elementos verticalmente */
     justify-content: space-evenly; /* Distribuye espacio entre los elementos */
     flex-grow: 1; /* Ocupa todo el espacio disponible dentro de cada celda del grid */
+    max-width: 100%; /* Evita que exceda el ancho del contenedor */
+    width: 100%; /* Asegura que se ajuste al contenedor */
+    word-wrap: break-word; /* Fuerza el ajuste de texto */
+    overflow: hidden; /* Oculta cualquier desbordamiento inesperado */
   }
 
   h5.project-name {
     font-family: "Michroma", serif;
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
     text-shadow: -2px -2px black;
+    word-break: break-word; /* Asegura que el texto no desborde */
   }
 
   p.project-description {
     padding: 15px 0;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-style: normal;
     letter-spacing: 0.8px;
+    word-break: break-word;
   }
 
   div.body-content-project {
@@ -1734,11 +1747,13 @@ a.anchor-contact-icon i {
     flex-direction: column;
     flex-grow: 1;
     justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
   }
 
   div.img-project {
     width: 100%;
-    max-width: 800px;
+    max-width: 100%;
     height: auto;
     overflow: hidden;
     position: relative;
@@ -1755,27 +1770,36 @@ a.anchor-contact-icon i {
 
   div.tech-project {
     max-height: 200px;
+    overflow-y: auto; /* Permite scroll si es necesario */
   }
 
   p.tech-description {
     padding: 30px 0 0px 10px;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-family: "Michroma", serif;
     text-align: center;
+    word-break: break-word; /* Evita desbordamientos de texto */
   }
 
   div.tech-icons {
     padding: 20px;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: space-evenly;
   }
 
+  div.tech-icons svg {
+    width: 40px; /* Cambia el tamaño según tu necesidad */
+    height: 40px;
+    max-width: 100%; /* Asegura que no excedan el contenedor */
+  }
+
   .foot-project {
-    height: 50px;
-    align-self: flex-start;
+    height: auto;
+    align-self:center;
+    margin-top: 20px;
   }
 
   a.project-link {
