@@ -75,7 +75,7 @@ if (isset($_GET['status'])) {
     <div class="main-content-home">
       <div class="home-content">
         <h1>Hola, soy <span>MARTiN</span></h1>
-        <h3 class="texto-tipeado">Soy <span class="text-din"></span><span class="cursor">|</span></h3>
+        <h3 class="texto-tipeado"><span class="text-din"></span><span class="cursor">|</span></h3>
         <p>Soy Programador Web y Desarrollador de Aplicaciones Web Dinámicas con tecnologías LAMP. Con algo de experiencia y en constante aprendizaje<br> tanto en Front-end como en Back-end.</p>
       </div>
       <div class="home-iconos-redes">
@@ -642,7 +642,7 @@ if (isset($_GET['status'])) {
   <section id="Contact">
 
     <h1 class="titulo" style="justify-content: start;">Contacto</h1>
-    <p class="texto-info text-center">Si tenés alguna pregunta ó necesitas contactarte conmigo, te invito a escribirme:</p>
+    <p class="texto-info-contacto text-center">Si tenés alguna pregunta ó necesitas contactarte conmigo, te invito a escribirme:</p>
 
     <!-- Mostrar el mensaje si existe -->
     <?php echo $mensajeQS; ?>
@@ -774,7 +774,7 @@ if (isset($_GET['status'])) {
   <script>
     // Textos que queremos mostrar
     const texts = [
-      "Fullstack Developer ",
+      "Desarrollador Fullstack ",
       "PHP Developer ",
       "Front End Designer ",
       "Back End Developer "

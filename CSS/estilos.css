@@ -352,11 +352,12 @@ p.texto-info span.titulo-exp {
 /********************************************/
 
 .sub-titles {
-  font-size: 2.8rem;
+  font-family: "Bruno Ace SC", serif;
+  font-size: 2.5rem;
   color: rgb(255, 255, 255);
   margin: 120px 0 0 0;
   padding: 10px 0;
-  text-shadow: -1px 1px black, -2px -2px 15px rgb(236, 129, 68);
+  
 }
 
 .sub-titles i {
@@ -480,8 +481,10 @@ div.tech-icons {
 }
 
 .foot-project {
-  height: 50px;
-  align-self: flex-start;
+  
+  height: auto;
+  align-self:center;
+  margin-top: 20px;
 }
 
 a.project-link {
@@ -494,6 +497,14 @@ a.project-link {
 /****************************************/
 /**********  SECCIÓN CONTACT ***********/
 /****************************************/
+
+p.texto-info-contacto {
+  
+  font-size: 1.8rem;
+  letter-spacing: 0.3px;
+  line-height: 3rem;
+  padding-left: 10px;
+}
 
 div.datos {
   display: inline-flex;
@@ -974,7 +985,6 @@ a.anchor-contact-icon i {
     color: rgb(255, 255, 255);
     margin: 120px 0 0 0;
     padding: 10px 0;
-    text-shadow: -1px 1px black, -2px -2px 15px rgb(236, 129, 68);
   }
 
   .sub-titles i {
@@ -1113,6 +1123,14 @@ a.anchor-contact-icon i {
   /****************************************/
   /**********  SECCIÓN CONTACT ***********/
   /****************************************/
+
+  p.texto-info-contacto {
+    text-align: start !important;
+    font-size: 1.8rem;
+    letter-spacing: 0.3px;
+    line-height: 3rem;
+    padding-left: 10px;
+  }
 
   div.datos {
     display: inline-flex;
@@ -1272,7 +1290,8 @@ a.anchor-contact-icon i {
   .input-group-lg .btn {
     height: 40px; /* Aumenta la altura del input y botón */
     font-size: 1.5rem; /* Aumenta el tamaño de la fuente */
-    font-weight: 400;
+    font-weight: 600;
+    text-align: center;
   }
 
   .mensaje-copiado {
@@ -1408,7 +1427,7 @@ a.anchor-contact-icon i {
   div.main-content-home {
     display: flex;
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -1654,7 +1673,7 @@ a.anchor-contact-icon i {
     color: rgb(255, 255, 255);
     margin: 20px 0 0 0;
     padding: 10px 0;
-    text-shadow: -1px 1px black, -2px -2px 15px rgb(236, 129, 68);
+    
   }
 
   .sub-titles i {
@@ -1737,7 +1756,7 @@ a.anchor-contact-icon i {
 
   p.project-description {
     padding: 15px 0;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-style: normal;
     letter-spacing: 0.8px;
     word-break: break-word;
@@ -1814,6 +1833,13 @@ a.anchor-contact-icon i {
   /**********  SECCIÓN CONTACT ***********/
   /****************************************/
 
+  p.texto-info-contacto {
+    text-align: start !important;
+    font-size: 1.8rem;
+    letter-spacing: 0.3px;
+    line-height: 3rem;
+  }
+
   div.datos {
     display: inline-flex;
     width: 100%;
@@ -1823,14 +1849,16 @@ a.anchor-contact-icon i {
   }
 
   div.form-container {
-    max-width: 590px;
-    min-width: 600px;
-    margin: 30px 0px 0px 20px;
+    max-width: 580px;
+    min-width: 100%;
+    margin: 30px auto 0px auto;
     border-radius: 20px;
-    box-shadow: 0 2px 10px rgb(236, 129, 68);
+    box-shadow: -2px 2px 10px rgb(236, 129, 68);
   }
 
   form.contact-form {
+    max-width: auto ;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding: 20px;
@@ -1841,6 +1869,7 @@ a.anchor-contact-icon i {
   form.contact-form label {
     color: rgb(236, 129, 68);
     margin-top: 10px;
+    padding-left: 10px;
     font-weight: bold;
     font-size: 1.5rem;
   }
@@ -1857,7 +1886,7 @@ a.anchor-contact-icon i {
   input::placeholder,
   textarea::placeholder {
     color: #555;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-style: italic;
   }
 
@@ -1880,14 +1909,16 @@ a.anchor-contact-icon i {
   }
 
   div.contenedor-datos {
-    margin: 30px 0px 0px 20px;
-    padding: 40px 0 10px 40px;
+    margin: 20px 0px 20px 0px;
+    padding: 20px;
+    width: 100%;
+    max-width: auto;
   }
 
   div.contenedor-cvs {
-    display: inline-flex;
-    flex-direction: row;
-    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 
   div.cvs {
@@ -1897,7 +1928,7 @@ a.anchor-contact-icon i {
   }
 
   p.texto-cv {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     padding: 5px;
   }
 
@@ -1971,8 +2002,9 @@ a.anchor-contact-icon i {
   .input-group-lg .form-control,
   .input-group-lg .btn {
     height: 40px; /* Aumenta la altura del input y botón */
-    font-size: 1.5rem; /* Aumenta el tamaño de la fuente */
-    font-weight: 400;
+    font-size: 1.3rem; /* Aumenta el tamaño de la fuente */
+    font-weight: 600;
+    text-align: center;
   }
 
   .mensaje-copiado {
@@ -1988,108 +2020,3 @@ a.anchor-contact-icon i {
   }
 }
 
-/*
-@media (max-width: 995px) {
-  nav.navbar {
-    /*position: absolute;
-    top: 100%;
-    right: 0;*/
-/* width: 100%;
-    height: 10%;
-    border-left: 3px solid rgb(236, 129, 68);
-    border-bottom: 3px solid rgb(236, 129, 68);
-    border-bottom-left-radius: 2rem;
-    padding: 1rem;
-    /*background-color: #1e1e1e;
-    border-top: 1px solid #1e1e1e;*/
-/* }
-  /*
-  nav.active {
-    display: block;
-  }
-
-  nav.navbar a {
-    display: block;
-    font-size: 2rem;
-    margin: 2rem 0.5rem;
-  }
-
-  nav a:hover,
-  nav.active {
-    width: 25%;
-    padding: 0.8rem;
-    border-radius: 0.5rem;
-    border-bottom: 0.5rem solid rgb(236, 129, 68);
-  }
-
-  section {
-    min-height: 100vh;
-    padding: 5rem 9% 5rem;
-  }
-
-  #Home {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    /*background-color: black;*/
-/*}
-
-  #Home .home-content h1 {
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
-  }
-
-  span {
-    color: rgb(236, 129, 68);
-  }
-
-  .home-content h3 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .home-img {
-    border-radius: 50%;
-  }
-
-  .home-img img {
-    position: relative;
-    width: 32vw;
-    border-radius: 50%;
-    box-shadow: 0 0 25px solid rgb(236, 129, 68);
-    cursor: pointer;
-    transition: 0.2s linear;
-  }
-
-  .home-img img:hover {
-    font-size: 1.8rem;
-    font-weight: 500;
-  }
-
-  .home-iconos-redes ul li a {
-    color: white;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background-color: transparent;
-    border: 0.2rem solid rgb(236, 129, 68);
-    font-size: 2rem;
-    border-radius: 50%;
-    margin: 3rem 1.5rem 3rem 0;
-    transition: 0.3s ease;
-  }
-
-  .home-iconos-redes ul li a:hover {
-    color: black;
-    transform: scale(1.3) translateY(-5px);
-    background-color: rgb(236, 129, 68);
-    box-shadow: 0 0 25px rgb(236, 129, 68);
-  }
-}
- */
