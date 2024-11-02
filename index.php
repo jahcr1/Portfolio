@@ -1,4 +1,14 @@
 <?php
+use Dotenv\Dotenv;  // Importa la clase Dotenv
+
+require __DIR__ . '/vendor/autoload.php';  // Importa PHPMailer
+
+// Cargar las variables de entorno desde .env
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+?>
+
+<?php
 $mensajeQS = '';
 if (isset($_GET['status'])) {
   if ($_GET['status'] === 'success') {
@@ -670,7 +680,7 @@ if (isset($_GET['status'])) {
         <div class="contenedor-cvs">
           <div class="cvs">
             <p class="texto-cv text-center">Podés ver mi CV acá :</p>
-            <a href="componentes/vercv.php" class="btn btn-estilo-cv" target="_blank">CV<i class="bi bi-eye"></i></a>
+            <a href="vercv.php" class="btn btn-estilo-cv" target="_blank">CV<i class="bi bi-eye"></i></a>
 
           </div>
           <div class="cvs">
@@ -692,7 +702,7 @@ if (isset($_GET['status'])) {
             <div class="row justify-content-center">
               <div class="col-md-10">
                 <div class="input-group input-group-lg ">
-                  <input type="text" class="form-control"  value="martin.contreras.dev@gmail.com" id="correo" readonly>
+                  <input type="text" class="form-control"  value="<?php echo htmlspecialchars($_ENV['SMTP_TO_EMAIL']); ?>" id="correo" readonly>
                   <button class="btn btn-success" type="button" id="btn-copiar">Copiar</button>
                 </div>
                 <div class="mt-2">

@@ -237,7 +237,7 @@ div.home-img img {
 }
 
 .home-content-info {
-  /*margin: 20px 0;*/
+  margin: 1px;
 }
 
 p.texto-random {
@@ -1549,7 +1549,7 @@ a.anchor-contact-icon i {
   }
 
   .home-content-info {
-    /*margin: 20px 0;*/
+    margin: 1px 0;
   }
 
   p.texto-random {
