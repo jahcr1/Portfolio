@@ -1,7 +1,7 @@
 <?php
 use Dotenv\Dotenv;  // Importa la clase Dotenv
 
-require __DIR__ . '/vendor/autoload.php';  // Importa PHPMailer
+require __DIR__ . '/vendor/autoload.php';  // Importa las dependencias de composer
 
 // Cargar las variables de entorno desde .env
 $dotenv = Dotenv::createImmutable(__DIR__);
