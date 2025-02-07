@@ -486,7 +486,7 @@ if (isset($_GET['status'])) {
               </div>
             </div>
             <div class="foot-project">
-              <a href="#link-github-proyecto" class="project-link">https://github.com/jahcr1/kudaySTORE</a>
+              <a href="https://github.com/jahcr1/kudaySTORE" class="project-link">https://github.com/jahcr1/kudaySTORE</a>
             </div>
           </div>
 
