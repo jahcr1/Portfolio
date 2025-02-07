@@ -576,7 +576,7 @@ if (isset($_GET['status'])) {
               </div>
             </div>
             <div class="foot-project">
-              <a href="#link-github-proyecto" class="project-link">https://github.com/jahcr1/Secure-Login</a>
+              <a href="https://github.com/jahcr1/Secure-Login" class="project-link">https://github.com/jahcr1/Secure-Login</a>
             </div>
           </div>
 
@@ -641,7 +641,7 @@ if (isset($_GET['status'])) {
 
             </div>
             <div class="foot-project">
-              <a href="#link-github-proyecto" class="project-link">https://github.com/jahcr1/FuncionesPHP</a>
+              <a href="https://github.com/jahcr1" class="project-link">https://github.com/jahcr1/FuncionesPHP</a>
             </div>
           </div>
         </div>
