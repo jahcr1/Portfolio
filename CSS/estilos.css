@@ -409,6 +409,9 @@ div.container {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 /*  estilos para cada caja contenedor de un proyecto*/
@@ -1036,6 +1039,9 @@ a.anchor-contact-icon i {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   /*  estilos para cada caja contenedor de un proyecto*/
@@ -1071,7 +1077,7 @@ a.anchor-contact-icon i {
 
   div.img-project {
     width: 100%;
-    max-width: 800px;
+    max-width: 100%;
     height: auto;
     overflow: hidden;
     position: relative;
@@ -1410,6 +1416,15 @@ a.anchor-contact-icon i {
   body {
     padding: 25px 5% 25px;
   }
+
+  div.projects {
+      display: grid;
+      grid-template-columns: 1fr; /* Asegura que solo haya una columna en móviles */
+      padding: 10px; /* Reduce padding para evitar cortes */
+  }
+  
+  
+
   /************************************/
   /**********  SECCIÓN HOME ***********/
   /************************************/
@@ -1725,10 +1740,11 @@ a.anchor-contact-icon i {
   div.container {
     display: flex;
     flex-direction: column;
-    margin-top: 5px;
-    max-width: 100%; /* Asegura que no exceda el ancho */
+    margin: 5px 0;
     width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    max-width: 100%; /* Asegura que no exceda el ancho */
     flex-wrap: wrap; /* Permite que los elementos se ajusten */
+    
   }
 
   /*  estilos para cada caja contenedor de un proyecto*/
@@ -1818,15 +1834,24 @@ a.anchor-contact-icon i {
 
   .foot-project {
     height: auto;
-    align-self:center;
+    text-align: center;
     margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+    
   }
 
   a.project-link {
     color: rgb(236, 129, 68);
-    font-size: 1.7rem;
+    font-size: 1.2rem;
+    padding: 5px 10px;
     text-decoration: none;
     list-style-type: none;
+    white-space: normal; /* Permite que el texto haga salto de línea */
+    word-wrap: break-word; /* Fuerza el corte si es necesario */
+    overflow-wrap: break-word; /* Alternativa para compatibilidad */
+    display: block; /* Asegura que ocupe solo el ancho necesario */
+    text-align: center; /* Mantiene el texto centrado */
   }
 
   /****************************************/
