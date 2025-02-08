@@ -36,6 +36,7 @@
 html {
   font-size: 62.5%;
   height: 100%;
+  min-height: 100vh;
 }
 
 body {
@@ -54,11 +55,12 @@ body {
     /* Capa 2: Patrones de íconos de desarrollo */
       url("../imagenes/fondo/patterns/dark-honeycomb.png") repeat center;
 
-  background-size: contain, /* Capa 1: Degradado cubre toda la pantalla */ auto; /* Capa 2: Patrón de íconos en su tamaño original */
+  background-size: cover, /* Capa 1: Degradado cubre toda la pantalla */ auto; /* Capa 2: Patrón de íconos en su tamaño original */
 
   background-blend-mode: overlay, luminosity; /* Cambia a overlay o otro modo si deseas ver mezcla */
 
   background-attachment: fixed; /* Fija el fondo */
+  will-change: transform;
 }
 
 header {
