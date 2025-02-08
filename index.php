@@ -763,20 +763,27 @@ if (isset($_GET['status'])) {
   <script>
     let lastScrollTop = 0;
     const navbar = document.querySelector('.navbar');
+    let ticking = false; // Para evitar que el evento dispare demasiadas veces
 
     window.addEventListener('scroll', function() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollTop > lastScrollTop) {
-        // Si el usuario hace scroll hacia abajo, oculta la barra
-        navbar.style.transform = 'translateY(-150%)';
-      } else {
-        // Si el usuario hace scroll hacia arriba, muestra la barra
-        navbar.style.transition = 'transform 0.6s ease-in-out'; // Transición más lenta al mostrar
-        navbar.style.transform = 'translateY(0)';
+          if (scrollTop > lastScrollTop) {
+            // Scroll hacia abajo → Ocultar navbar
+            navbar.style.transform = 'translateY(-150%)';
+          } else {
+            // Scroll hacia arriba → Mostrar navbar
+            navbar.style.transition = 'transform 0.6s ease-in-out';
+            navbar.style.transform = 'translateY(0)';
+          }
+
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      lastScrollTop = scrollTop;
     });
   </script>
 
