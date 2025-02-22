@@ -86,7 +86,7 @@ if (isset($_GET['status'])) {
       <div class="home-content">
         <h1>Hola, soy <span>MARTiN</span></h1>
         <h3 class="texto-tipeado"><span class="text-din"></span><span class="cursor">|</span></h3>
-        <p>Soy Programador Web y Desarrollador de Aplicaciones Web Dinámicas con tecnologías LAMP. Con algo de experiencia y en constante aprendizaje<br> tanto en Front-end como en Back-end.</p>
+        <p>Soy Programador Web y Desarrollador de Aplicaciones Web Dinámicas con tecnologías LAMP. Haciendo constantemente experiencia y aprendizaje<br> tanto en Front-end como en Back-end.</p>
       </div>
       <div class="home-iconos-redes">
         <ul class="redes">
@@ -115,14 +115,14 @@ if (isset($_GET['status'])) {
   <section id="Aboutme">
 
     <h1 class="titulo" style="justify-content: end;">Sobre mi</h1>
-    <p class="texto-info" style="margin-top: 50px;">Hola a todos! Soy Martín Contreras, un programador inquieto con una fuerte afición hacia las nuevas tecnologias, el desarrollo de <span>Sitios Webs Dinámicos</span> y la creación de <span>Aplicaciones Personalizadas</span>. <br> <br> Me inicié en el mundo de la programación estudiando como ingeniero electrónico, lo que me llevó a aprender mucha<br> lógica de programación en lenguajes como <span>C y C++</span>.<br><br> Esto despertó en mi una curiosidad por aprender y saber como se crean exactamente programas y/o aplicaciones web usando lenguajes como <span>PHP, HTML5, CSS3, JAVASCRIPT</span>.<br>Actualmente me encuentro desarrollando distintos proyectos, tanto para la universidad como proyectos personales que me ayuden<br> a seguir perfeccionando mi stack.<br><br>Me gusta mucho desarrollar con principios <span>SOLID</span> y soy muy autodidácta cuando se trata de aprender cosas nuevas.<br>
-      <br><br><span class="titulo-exp">Actualmente me encuentro estudiando y me interesa saber más de </span>:<br>
-      <span class="exp">Patrones de Diseño</span><br>
-      <span class="exp">Programación Orientada a Objetos (POO) con PHP y PDO</span><br>
+    <p class="texto-info" style="margin-top: 50px;">Hola a todos! Soy Martín Contreras, un programador inquieto con una fuerte afición hacia las nuevas tecnologías, el desarrollo de <span>Sitios Webs Dinámicos</span> y la creación de <span>Aplicaciones Personalizadas</span>. <br> <br> Me inicié en el mundo de la programación estudiando como ingeniero electrónico, lo que me llevó a aprender mucha<br> lógica de programación en lenguajes como <span>C y C++</span>.<br><br> Esto me despertó una curiosidad por aprender y saber como se crean exactamente programas y/o aplicaciones web usando lenguajes como <span>PHP, HTML5, CSS3, JAVASCRIPT</span>.<br>Actualmente me encuentro desarrollando distintos proyectos, tanto para la universidad como proyectos personales que me ayuden<br> a seguir perfeccionando mi stack.<br><br>Me gusta mucho desarrollar con principios <span>SOLID</span> y soy muy autodidácta cuando se trata de aprender cosas nuevas.<br>
+      <br><br><span class="titulo-exp">Actualmente me encuentro estudiando y me interesa saber más sobre </span>:<br>
+      <span class="exp">Patrones de Diseños, MVC principalmente</span><br>
+      <span class="exp">Programación Orientada a Objetos (POO) con PHP8 y PDO</span><br>
       <span class="exp">API RESTful con PDO/MySQLi y Docker</span><br>
       <span class="exp">Composer y npm</span><br>
       <span class="exp">Server-Side Security y Base de Datos </span><br>
-      <span class="exp">Depuración de código </span><br>
+      <span class="exp">Depuración de código, Test unitario, CI/CD, etc </span><br>
       <span class="exp">Programación para electrónica (microcontroladores, PLC, etc) </span><br>
     </p>
 
@@ -416,7 +416,7 @@ if (isset($_GET['status'])) {
       <div class="container">
         <div class="main-content-project">
           <h5 class="project-name text-center">Kuday Store Sitio Oficial </h5>
-          <p class="project-description">Proyecto creado para una tienda virtual tipo <span>e-commerce</span> de diversos artículos.<br>Tiene en su desarrollo distintas tecnologías aplicadas, pero me centré en aprender y aplicar el uso de <span>PHP</span> para automatizar desde un panel de administración de stock, el despliegue de todos los items de la tienda.</p>
+          <p class="project-description">Proyecto creado para una tienda virtual tipo <span>e-commerce</span> de diversos artículos.<br>Tiene en su desarrollo distintas tecnologías aplicadas, pero me centré en aprender y aplicar el uso de <span>PHP</span> para automatizar desde un panel de administración de stock, el despliegue de todos los items de la tienda, y la eficiencia en los scripts para proteger fotos y datos. También utilicé funciones avanzadas de Javascript para el manejo de articulos en el carrito, y en la parte del Backend gran parte del código fue estructurado con programacion procedural.</p>
 
           <div class="body-content-project">
             <div class="img-project">
@@ -496,7 +496,7 @@ if (isset($_GET['status'])) {
       <div class="container">
         <div class="main-content-project">
           <h5 class="project-name text-center">Secure Login</h5>
-          <p class="project-description">En este proyecto se priorizó el uso de funciones de PHP, PDO y scripts para una validación completa y segura de un <span>LOGIN</span>, tanto para el Front como para el Back. Así aprendí a mejorar las validaciones de datos en los formularios al momento de crear cualquier cuenta en una aplicacion web.<br>Otra cosa que utilicé fueron las funciones de <span>Encriptación de Passwords</span> en la base de datos y regeneracion de la misma, para tener más seguridad y generar confianza con las base de datos de clientes estrictos.</p>
+          <p class="project-description">En este proyecto se priorizó el uso de funciones de PHP, PDO y scripts para una validación completa y segura de un <span>LOGIN</span>, tanto para el Front como para el Back. Así aprendí a mejorar las validaciones de datos en los formularios al momento de crear cualquier cuenta en una aplicacion web.<br>Otra cosa que utilicé fueron las funciones de <span>Encriptación de Passwords</span> en la base de datos y regeneracion de las mismas, para tener más seguridad y generar confianza con las Bases de Datos de clientes más estrictos.</p>
 
           <div class="body-content-project">
             <div class="img-project">
@@ -586,7 +586,7 @@ if (isset($_GET['status'])) {
       <div class="container">
         <div class="main-content-project">
           <h5 class="project-name text-center">Funciones PHP</h5>
-          <p class="project-description">Proyecto de revisión de métodos especificos en PHP para el manejo de <span>Fechas</span>, creación de <span>Ficheros y Directorios</span>, manipulación de <span>Imágenes y Thumbnails</span>, asi como también marcas de agua para los protección de imágenes dinámicas, <span>Captcha, reCaptcha de Google y Captchas Personalizados</span>, <span>POO</span> y algo de seguridad.</p>
+          <p class="project-description">Proyecto de revisión de métodos especificos en PHP para el manejo de <span>Fechas</span>, creación de <span>Ficheros y Directorios</span>, manipulación de <span>Imágenes y Thumbnails</span>, asi como también marcas de agua para los protección de imágenes dinámicas, <span>Captcha, reCaptcha de Google y Captchas Personalizados</span>, <span>POO</span> para el manejo de datos y creacion de objetos, por lo tanto hay Programacion Orientada a Objetos y algo de seguridad con PDO en las consultas, mas que nada para la prevención de SQL INJECTION.</p>
 
           <div class="body-content-project">
             <div class="img-project">
