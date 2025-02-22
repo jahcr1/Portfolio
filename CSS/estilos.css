@@ -35,7 +35,9 @@
 
 html {
   font-size: 62.5%;
-  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
@@ -44,21 +46,12 @@ body {
   overflow-x: hidden;
   color: white;
 
-  background: 
-    /* Capa 1: Degradado oscuro */ linear-gradient(
-      to bottom,
-      #488199,
-      #506d75,
-      #244a5a
-    ),
-    /* Capa 2: Patrones de íconos de desarrollo */
-      url("../imagenes/fondo/patterns/dark-honeycomb.png") repeat center;
+  background: url("../imagenes/fondo/patterns/dark-honeycomb.png") repeat center,
+    /* Patrón */ linear-gradient(to bottom, #488199, #506d75, #336a81); /* Degradado */
 
-  background-size: contain, /* Capa 1: Degradado cubre toda la pantalla */ auto; /* Capa 2: Patrón de íconos en su tamaño original */
-
-  background-blend-mode: overlay, luminosity; /* Cambia a overlay o otro modo si deseas ver mezcla */
-
-  background-attachment: fixed; /* Fija el fondo */
+  background-blend-mode: overlay; /* Mezcla las capas para fusionarlas */
+  background-size: auto, cover; /* Tamaño del patrón y del degradado */
+  background-attachment: scroll; /* Evita los errores de fixed en móviles */
 }
 
 header {
@@ -357,7 +350,6 @@ p.texto-info span.titulo-exp {
   color: rgb(255, 255, 255);
   margin: 120px 0 0 0;
   padding: 10px 0;
-  
 }
 
 .sub-titles i {
@@ -484,9 +476,8 @@ div.tech-icons {
 }
 
 .foot-project {
-  
   height: auto;
-  align-self:center;
+  align-self: center;
   margin-top: 20px;
 }
 
@@ -502,7 +493,6 @@ a.project-link {
 /****************************************/
 
 p.texto-info-contacto {
-  
   font-size: 1.8rem;
   letter-spacing: 0.3px;
   line-height: 3rem;
@@ -689,7 +679,9 @@ a.anchor-contact-icon i {
 @media all and (min-width: 600px) and (max-width: 1200px) {
   html {
     font-size: 62.5%;
-    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
 
   body {
@@ -1112,10 +1104,9 @@ a.anchor-contact-icon i {
     justify-content: space-evenly;
   }
 
-  
   .foot-project {
     height: auto;
-    align-self:center;
+    align-self: center;
     margin-top: 20px;
   }
 
@@ -1316,7 +1307,9 @@ a.anchor-contact-icon i {
 @media all and (max-width: 599px) {
   html {
     font-size: 62.5%;
-    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
 
   body {
@@ -1324,23 +1317,6 @@ a.anchor-contact-icon i {
     min-height: 100vh;
     overflow-x: hidden;
     color: white;
-
-    background: 
-      /* Capa 1: Degradado oscuro */ linear-gradient(
-        to bottom,
-        #488199,
-        #506d75,
-        #244a5a
-      ),
-      /* Capa 2: Patrones de íconos de desarrollo */
-        url("../imagenes/fondo/patterns/dark-honeycomb.png") repeat center;
-
-    background-size: contain,
-      /* Capa 1: Degradado cubre toda la pantalla */ auto; /* Capa 2: Patrón de íconos en su tamaño original */
-
-    background-blend-mode: overlay, luminosity; /* Cambia a overlay o otro modo si deseas ver mezcla */
-
-    background-attachment: fixed; /* Fija el fondo */
   }
 
   header {
@@ -1359,7 +1335,6 @@ a.anchor-contact-icon i {
   }
 
   button.navbar-toggler {
-    
     width: 48px; /* Ajusta según lo que necesites */
     height: 48px;
     margin-right: 10px;
@@ -1418,12 +1393,10 @@ a.anchor-contact-icon i {
   }
 
   div.projects {
-      display: grid;
-      grid-template-columns: 1fr; /* Asegura que solo haya una columna en móviles */
-      padding: 10px; /* Reduce padding para evitar cortes */
+    display: grid;
+    grid-template-columns: 1fr; /* Asegura que solo haya una columna en móviles */
+    padding: 10px; /* Reduce padding para evitar cortes */
   }
-  
-  
 
   /************************************/
   /**********  SECCIÓN HOME ***********/
@@ -1436,7 +1409,6 @@ a.anchor-contact-icon i {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    
   }
 
   div.main-content-home {
@@ -1511,7 +1483,7 @@ a.anchor-contact-icon i {
     font-weight: 400;
     line-height: 1.5;
     white-space: pre-line; /* Mantiene saltos de línea */
-    text-align:center;
+    text-align: center;
   }
 
   div.home-img {
@@ -1688,7 +1660,6 @@ a.anchor-contact-icon i {
     color: rgb(255, 255, 255);
     margin: 20px 0 0 0;
     padding: 10px 0;
-    
   }
 
   .sub-titles i {
@@ -1744,7 +1715,6 @@ a.anchor-contact-icon i {
     width: 100%; /* Asegura que ocupe todo el ancho disponible */
     max-width: 100%; /* Asegura que no exceda el ancho */
     flex-wrap: wrap; /* Permite que los elementos se ajusten */
-    
   }
 
   /*  estilos para cada caja contenedor de un proyecto*/
@@ -1838,7 +1808,6 @@ a.anchor-contact-icon i {
     margin-top: 20px;
     width: 100%;
     max-width: 100%;
-    
   }
 
   a.project-link {
@@ -1882,7 +1851,7 @@ a.anchor-contact-icon i {
   }
 
   form.contact-form {
-    max-width: auto ;
+    max-width: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -2044,4 +2013,3 @@ a.anchor-contact-icon i {
     visibility: visible;
   }
 }
-

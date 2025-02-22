@@ -1,4 +1,5 @@
 <?php
+
 use Dotenv\Dotenv;  // Importa la clase Dotenv
 
 require __DIR__ . '/vendor/autoload.php';  // Importa las dependencias de composer
@@ -20,12 +21,12 @@ if (isset($_GET['status'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio cr1</title>
+  <title>Portfolio</title>
 
   <!-- FAMILIAS TIPOGRAFICAS DE GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -657,7 +658,7 @@ if (isset($_GET['status'])) {
     <!-- Mostrar el mensaje si existe -->
     <?php echo $mensajeQS; ?>
     <div class="datos">
-      
+
       <div class="form-container">
         <form action="enviarmail.php" method="POST" class="contact-form">
           <label for="nombre">Nombre :</label>
@@ -688,11 +689,11 @@ if (isset($_GET['status'])) {
             <a role="button" class="btn btn-estilo-cv" href="componentes/cv.pdf" download="cv.pdf" rel="noopener noreferrer" target="_blank" title="Descargar Curriculum Vitae">CV <i class="bi bi-download"></i></a>
           </div>
         </div>
-        
+
         <div class="contact-icons">
           <p class="label-contact-icon">LinkedIN</p>
           <a href="https://www.linkedin.com/in/martin-contreras-/" class="anchor-contact-icon" target="_blank" title="Te lleva a mi LinkedIn"><i class="bi bi-linkedin"></i></a>
-          
+
           <p class="label-contact-icon">WhatsApp</p>
           <a href="https://wa.me/5493516451510?text=Hola%20quiero%20más%20información" class="anchor-contact-icon" target="_blank" title="Escribime a mi WhatsApp directamente"><i class="bi bi-whatsapp"></i></a>
         </div>
@@ -702,7 +703,7 @@ if (isset($_GET['status'])) {
             <div class="row justify-content-center">
               <div class="col-md-10">
                 <div class="input-group input-group-lg ">
-                  <input type="text" class="form-control"  value="<?php echo htmlspecialchars($_ENV['SMTP_TO_EMAIL']); ?>" id="correo" readonly>
+                  <input type="text" class="form-control" value="<?php echo htmlspecialchars($_ENV['SMTP_TO_EMAIL']); ?>" id="correo" readonly>
                   <button class="btn btn-success" type="button" id="btn-copiar">Copiar</button>
                 </div>
                 <div class="mt-2">
@@ -762,20 +763,27 @@ if (isset($_GET['status'])) {
   <script>
     let lastScrollTop = 0;
     const navbar = document.querySelector('.navbar');
+    let ticking = false; // Para evitar que el evento dispare demasiadas veces
 
     window.addEventListener('scroll', function() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (scrollTop > lastScrollTop) {
-        // Si el usuario hace scroll hacia abajo, oculta la barra
-        navbar.style.transform = 'translateY(-150%)';
-      } else {
-        // Si el usuario hace scroll hacia arriba, muestra la barra
-        navbar.style.transition = 'transform 0.6s ease-in-out'; // Transición más lenta al mostrar
-        navbar.style.transform = 'translateY(0)';
+          if (scrollTop > lastScrollTop) {
+            // Scroll hacia abajo → Ocultar navbar
+            navbar.style.transform = 'translateY(-150%)';
+          } else {
+            // Scroll hacia arriba → Mostrar navbar
+            navbar.style.transition = 'transform 0.6s ease-in-out';
+            navbar.style.transform = 'translateY(0)';
+          }
+
+          lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos
+          ticking = false;
+        });
+        ticking = true;
       }
-
-      lastScrollTop = scrollTop;
     });
   </script>
 
