@@ -67,7 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->addReplyTo($email, "$nombre");
     $mail->Subject = "Asunto: $asunto";
     $body  = "<b>Nombre:</b> $nombre <br>";
-    $body .= "<b>Asunto:</b> $asunto <br><hr>";
     $body .= "<b>Email:</b> $email<br><hr>";
     $body .= nl2br(htmlspecialchars($mensaje,ENT_QUOTES,'UTF-8'));
     $mail->isHTML(true);
@@ -77,8 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     /*  Mail de cortesía al usuario  */
     $mail->clearAllRecipients();
     $mail->addAddress($email);
-    $mail->Subject = '¡Gracias por contactarnos!';
-    $mail->Body    = "Hola $nombre 👋🏼,\n\nRecibimos tu mensaje y te responderemos a la brevedad.\n\nSaludos,\nMartín Contreras.";
+    $mail->Subject = "¡Gracias por contactarnos!";
+    $mail->Body    = "Hola $nombre 👋🏼,\n\nRecibi tu mensaje y te voy a estar respondiendo a la brevedad.\n\nSaludos,\nMartín Contreras.";
     $mail->isHTML(false);
     $mail->send();
 
