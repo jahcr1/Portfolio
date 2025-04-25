@@ -14,6 +14,30 @@ $dotenv->load();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+  // Validar Honeypot
+  if (!empty($_POST['telefono'])) {
+    header("Location: index.php?status=error#Contact"); // Bot detectado
+    exit;
+  }
+
+  // Validar reCAPTCHA
+  $recaptchaSecret = $_ENV['RECAPTCHA_SECRET_KEY'];
+  $recaptchaResponse = $_POST['g-recaptcha-response'];
+
+  if (empty($recaptchaResponse)) {
+    header("Location: index.php?status=error#Contact");
+    exit;
+  }
+
+  $verify = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret={$recaptchaSecret}&response={$recaptchaResponse}");
+  $captchaSuccess = json_decode($verify);
+
+  if (!$captchaSuccess->success) {
+    header("Location: index.php?status=error#Contact"); // Falla recaptcha
+    exit;
+  }
+
+  // Validación y saneamiento
   $nombre = htmlspecialchars($_POST['nombre']);
   $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
   $asunto = htmlspecialchars($_POST['asunto']);

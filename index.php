@@ -45,6 +45,10 @@ if (isset($_GET['status'])) {
   <!-- CSS PROPIO -->
   <link rel="stylesheet" href="CSS/estilos.css">
 
+  <!-- reCAPTCHA v2 Google -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
 </head>
 
 <body>
@@ -671,7 +675,15 @@ if (isset($_GET['status'])) {
           <input type="text" id="asunto" name="asunto" placeholder="Escribe el Asunto aquí" required autocomplete="off">
 
           <label for="mensaje">Mensaje :</label>
-          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Tú Mensaje . . ." required></textarea>
+          <textarea id="mensaje" name="mensaje" class="mb-4" rows="5" placeholder="Tú Mensaje . . ." required></textarea>
+
+          <!-- Campo Honeypot -->
+          <input type="text" name="telefono" style="display:none;" autocomplete="off">
+
+          <!-- reCAPTCHA -->
+          <div class="d-flex justify-content-center">
+            <div class="g-recaptcha" data-sitekey="<?= htmlspecialchars($_ENV['RECAPTCHA_SITE_KEY']) ?>"></div>
+          </div>
 
           <button type="submit">Enviar</button>
         </form>
