@@ -77,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     /*  Mail de cortesía al usuario  */
     $mail->clearAllRecipients();
     $mail->addAddress($email);
+    $mail->addReplyTo($_ENV['SMTP_TO_EMAIL'], 'Martin Contreras');
     $mail->Subject = "¡Gracias por contactarnos!";
     $mail->Body    = "Hola $nombre 👋🏼,\n\nRecibi tu mensaje y te voy a estar respondiendo a la brevedad.\n\nSaludos,\nMartín Contreras.";
     $mail->isHTML(false);
