@@ -60,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->Password = $_ENV['SMTP_PASSWORD'];  // Contraseña de la aplicacion
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = $_ENV['SMTP_PORT'];
+    $mail->CharSet = 'UTF-8';
 
     // Configuración del correo a la tienda
     $mail->setFrom($_ENV['SMTP_USER'], 'Formulario de Contacto');
