@@ -62,29 +62,46 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->Port = $_ENV['SMTP_PORT'];
     $mail->CharSet = 'UTF-8';
 
-    // Configuración del correo a la tienda
-    $mail->setFrom($_ENV['SMTP_USER'], 'Formulario de Contacto');
-    $mail->addAddress($_ENV['SMTP_TO_EMAIL']);  // A dónde se enviará el mensaje
-    $mail->addReplyTo($email, "$nombre");
-    $mail->Subject = "Asunto: $asunto";
-    $body  = "<b>Nombre:</b> $nombre <br>";
-    $body .= "<b>Email:</b> $email<br><hr>";
-    $body .= nl2br(htmlspecialchars($mensaje,ENT_QUOTES,'UTF-8'));
+    // Configuración del correo de contacto que me llega de CONTACTO
+    $mail->setFrom($_ENV['SMTP_USER'], 'Formulario Web');
+    $mail->addAddress($_ENV['SMTP_TO_EMAIL']);  // A mi mail
+    $mail->addReplyTo($email, $nombre); // Al visitante como respuesta
+    $mail->Subject = "Nuevo mensaje de contacto: $nombre";
+    // Correo en HTML
     $mail->isHTML(true);
-    $mail->Body = $body;
+    $mail->Body = "
+        <h2>Nuevo mensaje de seccion Contacto</h2>
+        <p><strong>Nombre:</strong> {$nombre}</p>
+        <p><strong>Email:</strong> {$email}</p>
+        <p><strong>Asunto:</strong> {$asunto}</p>
+        <hr>
+        <p><strong>Mensaje:</strong><br>" . nl2br(htmlspecialchars($mensaje)) . "</p>";
+    // Versión en texto plano
+    $mail->AltBody = "Nombre: $nombre\nEmail: $email\nAsunto: $asunto\n\nMensaje:\n$mensaje";
     $mail->send();
 
-    /*  Mail de cortesía al usuario  */
+    /*  Mail de cortesía al VISITANTE  */
     $mail->clearAllRecipients();
-    $mail->addAddress($email);
-    $mail->addReplyTo($_ENV['SMTP_TO_EMAIL'], 'Martin Contreras');
-    $mail->Subject = "¡Gracias por contactarnos!";
-    $mail->Body    = "Hola $nombre 👋🏼,\n\nRecibi tu mensaje y te voy a estar respondiendo a la brevedad.\n\nSaludos,\nMartín Contreras.";
-    $mail->isHTML(false);
+    $mail->setFrom($_ENV['SMTP_USER'], 'Martín Contreras'); // Desde tu correo
+    $mail->addAddress($email); // Al mail del VISITANTE
+    $mail->addReplyTo($_ENV['SMTP_USER'], 'Martin Contreras'); // A mi como respuesta
+
+    $mail->Subject = "Gracias por contactarnos, $nombre 🙌🏼";
+    $mail->isHTML(true);
+    $mail->Body = "
+        <p>Hola <strong>$nombre</strong> 👋🏼,</p>
+        <p>Recibí tu mensaje y en breve te estaré respondiendo. Gracias por tomarte el tiempo de escribirme.</p>
+        <hr>
+        <p><strong>Este fue tu mensaje:</strong><br>" . nl2br(htmlspecialchars($mensaje)) . "</p>
+        <br>
+        <p>Saludos,<br><strong>Martín Contreras</strong></p>
+    ";
+    $mail->AltBody = "Hola $nombre,\n\nRecibí tu mensaje:\n\n$mensaje\n\nGracias por escribir.\n\nMartín Contreras";
     $mail->send();
 
     header("Location: index.php?status=success#Contact");  // Redirigir si se envía correctamente
   } catch (Exception $e) {
+    error_log("Mailer Error: {$mail->ErrorInfo}", 3, "logs/mailer_errors.log");
     header("Location: index.php?status=error#Contact");  // Redirigir si falla el envío
   }
 }
