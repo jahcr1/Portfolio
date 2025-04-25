@@ -61,13 +61,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port = $_ENV['SMTP_PORT'];
 
-    // Configuración del correo
-    $mail->setFrom($_ENV['SMTP_USER'], $_ENV['SMTP_FROM_NAME']);
+    // Configuración del correo a la tienda
+    $mail->setFrom($_ENV['SMTP_USER'], 'Formulario de Contacto');
     $mail->addAddress($_ENV['SMTP_TO_EMAIL']);  // A dónde se enviará el mensaje
-    $mail->Subject = $asunto;
-    $mail->Body = "Nombre: $nombre\nCorreo: $email\nAsunto: $asunto\nMensaje: $mensaje\n";
-
+    $mail->addReplyTo($email, "$nombre");
+    $mail->Subject = "Asunto: $asunto";
+    $body  = "<b>Nombre:</b> $nombre <br>";
+    $body .= "<b>Asunto:</b> $asunto <br><hr>";
+    $body .= "<b>Email:</b> $email<br><hr>";
+    $body .= nl2br(htmlspecialchars($mensaje,ENT_QUOTES,'UTF-8'));
+    $mail->isHTML(true);
+    $mail->Body = $body;
     $mail->send();
+
+    /*  Mail de cortesía al usuario  */
+    $mail->clearAllRecipients();
+    $mail->addAddress($email);
+    $mail->Subject = '¡Gracias por contactarnos!';
+    $mail->Body    = "Hola $nombre 👋🏼,\n\nRecibimos tu mensaje y te responderemos a la brevedad.\n\nSaludos,\nMartín Contreras.";
+    $mail->isHTML(false);
+    $mail->send();
+
     header("Location: index.php?status=success#Contact");  // Redirigir si se envía correctamente
   } catch (Exception $e) {
     header("Location: index.php?status=error#Contact");  // Redirigir si falla el envío
