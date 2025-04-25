@@ -678,7 +678,7 @@ if (isset($_GET['status'])) {
           <textarea id="mensaje" name="mensaje" class="mb-4" rows="5" placeholder="Tú Mensaje . . ." required></textarea>
 
           <!-- Campo Honeypot -->
-          <input type="text" name="telefono" style="display:none;" autocomplete="off">
+          <input type="text" name="telefono" style="display:none !important;" autocomplete="off" aria-hidden="true">
 
           <!-- reCAPTCHA -->
           <div class="d-flex justify-content-center">
