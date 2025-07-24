@@ -26,7 +26,17 @@ if (isset($_GET['status'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  
+  <!-- Favicon estándar -->
+  <link rel="icon" type="image/png" sizes="512x512" href="imagenes/favicon/favicon-512x512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="imagenes/favicon/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="imagenes/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="imagenes/favicon/favicon-16x16.png">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="imagenes/favicon/site.webmanifest">
+
+  <title>Martin Contreras - Desarrollador Web</title>
 
   <!-- FAMILIAS TIPOGRAFICAS DE GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
