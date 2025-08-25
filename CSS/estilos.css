@@ -36,22 +36,23 @@
 html {
   font-size: 62.5%;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   overflow-x: hidden;
 }
 
 body {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   overflow-x: hidden;
   color: white;
+  background-color: #336a81; /* color base fallback */
 
-  background: url("../imagenes/fondo/patterns/dark-honeycomb.png") repeat center,
-    /* Patrón */ linear-gradient(to bottom, #488199, #506d75, #336a81); /* Degradado */
+  background: 
+    url("../imagenes/fondo/patterns/fondo2.jpg") repeat center / 40px 40px, /* Patrón optimizado */
+    linear-gradient(to bottom, #488199, #506d75, #336a81);
 
-  background-blend-mode: overlay; /* Mezcla las capas para fusionarlas */
-  background-size: auto, cover; /* Tamaño del patrón y del degradado */
-  background-attachment: scroll; /* Evita los errores de fixed en móviles */
+  background-blend-mode: soft-light;
+  background-attachment: fixed; /* Intenta fixed, y haz fallback en móviles */
 }
 
 header {
@@ -101,15 +102,16 @@ nav.navbar a.nav-link.active {
   border-bottom: 3px solid rgb(236, 129, 68);
 }
 
-section,
-body {
-  padding: 5rem 5% 5rem;
+section{
+  padding: 5rem 5%;
+  background-color: rgba(0,0,0,0.2); /* tono semitransparente para evitar parches */
 }
 /************************************/
 /**********  SECCIÓN HOME ***********/
 /************************************/
 
 section#Home {
+  background-color: rgba(0,0,0,0.2); /* tono semitransparente para evitar parches */
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
@@ -389,103 +391,87 @@ div.main-content-section img:hover {
 /**********  SECCIÓN PROYECTOS ***********/
 /*****************************************/
 
-div.projects {
+.projects {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /*grid de 2 columnas iguales*/
-  gap: 20px;
-  padding: 20px;
-  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 40px;
 }
 
-div.container {
+.project-card {
+  background: rgba(46, 48, 48, 0.95);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.project-image img {
   width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-}
-
-/*  estilos para cada caja contenedor de un proyecto*/
-div.main-content-project {
-  background-color: rgb(46, 48, 48);
-  padding: 20px;
-  border: 1px solid darkgoldenrod;
-  display: flex;
-  flex-direction: column; /* Organiza los elementos verticalmente */
-  justify-content: space-evenly; /* Distribuye espacio entre los elementos */
-  flex-grow: 1; /* Ocupa todo el espacio disponible dentro de cada celda del grid */
-}
-
-h5.project-name {
-  font-family: "Michroma", serif;
-  font-size: 3rem;
-  color: white;
-  text-shadow: -2px -2px black;
-}
-
-p.project-description {
-  padding: 15px 0;
-  font-size: 1.6rem;
-  font-style: normal;
-  letter-spacing: 0.8px;
-}
-
-div.body-content-project {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: space-between;
-}
-
-div.img-project {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-}
-
-div.img-project img {
-  width: 100%;
-  height: auto;
+  height: 220px;
   object-fit: cover;
-  object-position: center;
-  display: block; /* Evita espacios adicionales alrededor de la imagen */
-  image-rendering: auto; /* Asegura que la imagen conserve la calidad al escalar */
 }
 
-div.tech-project {
-  max-height: 200px;
-}
-
-p.tech-description {
-  padding: 30px 0 0px 10px;
-  font-size: 2rem;
-  font-family: "Michroma", serif;
-  text-align: center;
-}
-
-div.tech-icons {
+.project-content {
   padding: 20px;
+  flex: 1;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 20px;
-  justify-content: space-evenly;
+  flex-direction: column;
 }
 
-.foot-project {
-  height: auto;
-  align-self: center;
-  margin-top: 20px;
+.project-title {
+  font-size: 2.2rem;
+  font-family: "Michroma", serif;
+  margin-bottom: 15px;
+  color: #fff;
 }
 
-a.project-link {
-  color: rgb(236, 129, 68);
-  font-size: 1.7rem;
+.project-description {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.tech-icons svg {
+  width: 45px;
+  height: 45px;
+  fill: #f0f0f0;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+  justify-content: center;
+}
+
+.project-links a {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: #fff;
+  background: linear-gradient(135deg, #ec8144, #ff9f68);
+  border-radius: 8px;
   text-decoration: none;
-  list-style-type: none;
+  transition: all 0.3s ease;
+}
+
+.project-links a:hover {
+  background: linear-gradient(135deg, #ff9f68, #ec8144);
 }
 
 /****************************************/
@@ -688,6 +674,7 @@ a.anchor-contact-icon i {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
+    background-attachment: scroll; /* en móviles */
   }
 
   header {
@@ -764,6 +751,7 @@ a.anchor-contact-icon i {
   /************************************/
 
   section#Home {
+    background-color: rgba(0,0,0,0.2); /* tono semitransparente para evitar parches */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1372,7 +1360,7 @@ a.anchor-contact-icon i {
   nav.navbar a.nav-link {
     font-size: 2rem;
     color: white;
-    text-shadow: 2px 2px black;
+    
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
@@ -1384,7 +1372,7 @@ a.anchor-contact-icon i {
   nav.navbar a.nav-link.active {
     color: rgb(236, 129, 68);
     border-bottom: 3px solid rgb(236, 129, 68);
-    text-shadow: 2px 2px black;
+    
   }
 
   section,
@@ -1403,6 +1391,7 @@ a.anchor-contact-icon i {
   /************************************/
 
   section#Home {
+    background-color: rgba(0,0,0,0.2); /* tono semitransparente para evitar parches */
     height: auto;
     display: flex;
     flex-wrap: wrap;
