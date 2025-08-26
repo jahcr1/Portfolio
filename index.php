@@ -130,15 +130,18 @@ if (isset($_GET['status'])) {
   <section id="Aboutme">
 
     <h1 class="titulo" style="justify-content: end;">Sobre mi</h1>
-    <p class="texto-info" style="margin-top: 50px;">Hola a todos! Soy Martín Contreras, un programador inquieto con una fuerte afición hacia las nuevas tecnologías, el desarrollo de <span>Sitios Webs Dinámicos</span> y la creación de <span>Aplicaciones Personalizadas</span>. <br> <br> Me inicié en el mundo de la programación estudiando como ingeniero electrónico, lo que me llevó a aprender mucha<br> lógica de programación en lenguajes como <span>C y C++</span>.<br><br> Esto me despertó una curiosidad por aprender y saber como se crean exactamente programas y/o aplicaciones web usando lenguajes como <span>PHP, HTML5, CSS3, JAVASCRIPT</span>.<br>Actualmente me encuentro desarrollando distintos proyectos, tanto para la universidad como proyectos personales que me ayuden<br> a seguir perfeccionando mi stack.<br><br>Me gusta mucho desarrollar con principios <span>SOLID</span> y soy muy autodidácta cuando se trata de aprender cosas nuevas.<br>
-      <br><br><span class="titulo-exp">Actualmente me encuentro estudiando y me interesa saber más sobre </span>:<br>
+    <p class="texto-info" style="margin-top: 50px;">Hola a todos! Soy Martín Contreras, un programador inquieto con una fuerte afición hacia las nuevas tecnologías, el desarrollo de <span>Sitios Webs Dinámicos</span> y la creación de <span>Aplicaciones Personalizadas</span>. <br> <br> Me inicié en el mundo de la programación estudiando como ingeniero electrónico, lo que me llevó a aprender mucha<br> lógica de programación en lenguajes como <span>C, C++</span> y algo de <span>Bash</span> obviamente</span>.<br><br> Esto me despertó una curiosidad por aprender y saber como se crean exactamente programas y/o aplicaciones web usando lenguajes como <span>PHP, HTML5, CSS3, JavaScript</span>.<br>Luego empecé a interesarme en la modularización de código, lo que me llevo a mi primer <span>Framework</span> como es <span>Laravel en PHP</span> <br> y aprender a diseñar webs completas desde cero pero ahora de manera más simple.<br>Actualmente me encuentro desarrollando distintos proyectos, tanto para la universidad como proyectos personales que me ayuden<br> a seguir perfeccionando mi stack.<br><br>Me gusta mucho desarrollar webs desde cero utilizando ambos paradigmas como son el procedural y Programación Orientada a Objetos (POO), también soy muy autodidácta cuando se trata de aprender cosas nuevas.<br>
+      <br><span class="titulo-exp">Actualmente me encuentro programando y aprendiendo sobre: </span><br>
+      <span class="exp">Framework PHP Laravel 12, Eloquent ORM, Query Builder</span><br>
+      <span class="exp">Carbon, Active Record y Facades</span><br>
       <span class="exp">Patrones de Diseños, MVC principalmente</span><br>
       <span class="exp">Programación Orientada a Objetos (POO) con PHP8 y PDO</span><br>
-      <span class="exp">API RESTful con PDO/MySQLi y Docker</span><br>
-      <span class="exp">Composer y npm</span><br>
-      <span class="exp">Server-Side Security y Base de Datos </span><br>
-      <span class="exp">Depuración de código, Test unitario, CI/CD, etc </span><br>
-      <span class="exp">Programación para electrónica (microcontroladores, PLC, etc) </span><br>
+      <span class="exp">API RESTful con PDO/MySQLi y SQLite y migraciones</span><br>
+      <span class="exp">Integración de Pasarelas de Pagos en Sitios Webs y APIs de terceros</span><br>
+      <span class="exp">Despliegues y actualizaciones de Sitios Webs para clientes</span><br>
+      <span class="exp">Server-Side Security y Distintos Gestores de BD </span><br>
+      <span class="exp">Depuración de código, Tests unitarios, CI/CD (C++ / PHP) </span><br>
+      <span class="exp">Programación para electrónica (microcontroladores ATMega, etc) </span><br>
     </p>
 
   </section>
@@ -207,11 +210,25 @@ if (isset($_GET['status'])) {
           <path fill="#fff" d="M85.3 76.1C81.1 83.5 73.1 88.5 64 88.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6z"></path>
         </svg>
 
+        <!-- Icono SVG de C++ -->
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" style="width: 60px; height:60px;"/>
+
+        <!-- Icono SVG de BASH -->
+        <svg width="60" height="60" viewBox="0 0 128 128">
+            <path fill="rgba(97, 252, 91, 1)" d="M112.205 26.129 71.8 2.142A15.326 15.326 0 0 0 64.005 0c-2.688 0-5.386.717-7.796 2.152L15.795 26.14C10.976 28.999 8 34.289 8 40.018v47.975c0 5.729 2.967 11.019 7.796 13.878L56.2 125.858A15.193 15.193 0 0 0 63.995 128a15.32 15.32 0 0 0 7.796-2.142l40.414-23.987c4.819-2.86 7.796-8.16 7.796-13.878V40.007c0-5.718-2.967-11.019-7.796-13.878zm-31.29 74.907.063 3.448c0 .418-.267.889-.588 1.06l-2.046 1.178c-.321.16-.6-.032-.6-.45l-.032-3.394c-1.745.728-3.523.9-4.647.45-.214-.086-.31-.397-.225-.761l.739-3.116c.064-.246.193-.493.364-.643a.725.725 0 0 1 .193-.139c.117-.064.235-.075.332-.032 1.22.407 2.773.214 4.272-.535 1.907-.964 3.18-2.913 3.16-4.84-.022-1.757-.964-2.474-3.267-2.496-2.934.01-5.675-.567-5.718-4.894-.032-3.555 1.81-7.26 4.744-9.595l-.032-3.48c0-.428.257-.9.589-1.07l1.98-1.264c.322-.161.6.043.6.46l.033 3.48c1.456-.578 2.72-.738 3.865-.47.247.064.364.406.257.802l-.77 3.084a1.372 1.372 0 0 1-.354.622.825.825 0 0 1-.203.15c-.108.053-.204.064-.3.053-.525-.118-1.767-.385-3.727.6-2.056 1.038-2.773 2.827-2.763 4.155.022 1.585.825 2.066 3.63 2.11 3.738.064 5.344 1.691 5.387 5.45.053 3.684-1.917 7.657-4.937 10.077zm21.18-5.794c0 .322-.042.621-.31.771l-10.216 6.211c-.267.161-.482.022-.482-.3V99.29c0-.321.193-.492.46-.653l10.067-6.018c.268-.16.482-.022.482.3zm7.026-58.993L70.89 59.86c-4.765 2.784-8.278 5.911-8.288 11.662v47.107c0 3.437 1.392 5.665 3.523 6.318a12.81 12.81 0 0 1-2.12.204c-2.239 0-4.445-.61-6.383-1.757L17.219 99.408c-3.951-2.345-6.403-6.725-6.403-11.426V40.007c0-4.7 2.452-9.08 6.403-11.426L57.634 4.594a12.555 12.555 0 0 1 6.382-1.756c2.238 0 4.444.61 6.382 1.756l40.415 23.987c3.33 1.981 5.579 5.397 6.21 9.242-1.36-2.86-4.38-3.63-7.902-1.574z"></path>
+            </svg>
+
+          
+
       </div>
     </div>
     <div class="container">
       <p class="sub-titles text-center">Frameworks y librerías</p>
       <div class="main-content-section">
+
+        <!-- Icono SVG de LARAVEL -->
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original-wordmark.svg" style="width: 100px; height:100px;" class="img-top"/>
+          
 
         <!-- Icono SVG de BOOTSTRAP -->
         <svg width="70" height="70" viewBox="0 0 128 128">
@@ -430,7 +447,7 @@ if (isset($_GET['status'])) {
       <!-- Proyecto 1 -->
       <div class="project-card" data-aos="fade-up">
         <div class="project-image">
-          <img src="imagenes/proyectos/tapakuday.png" alt="Kuday Store">
+          <img src="imagenes/proyectos/kudaycarrito.png" alt="Kuday Store">
         </div>
         <div class="project-content">
           <h3 class="project-title">Kuday Store</h3>
@@ -506,7 +523,7 @@ if (isset($_GET['status'])) {
       <!-- Proyecto 2 -->
       <div class="project-card" data-aos="fade-up" data-aos-delay="200">
         <div class="project-image">
-          <img src="imagenes/proyectos/213213.png" alt="Secure Login">
+          <img src="imagenes/proyectos/regfinal.png" alt="Secure Login">
         </div>
         <div class="project-content">
           <h3 class="project-title">Secure Login</h3>

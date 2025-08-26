@@ -198,11 +198,11 @@ div.home-img img {
 
 .home-img img:hover {
   box-shadow: 0 0 50px 5px rgb(236, 129, 68);
-  transform: rotateY(180deg);
+  transform: rotate(360deg) scale(1.05);
 }
 
 .home-iconos-redes {
-  margin: 20px 0;
+  margin: 50px 0;
   height: auto;
 }
 
@@ -372,7 +372,7 @@ div.main-content-section {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 35px;
+  gap: 55px;
 }
 
 div.main-content-section svg,
@@ -412,10 +412,18 @@ div.main-content-section img:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
+.project-image {
+  height: auto;
+  min-height: 350px;
+  width: 100%;
+  overflow: hidden;
+}
+
 .project-image img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 350px;
+  padding: 10px;
+  object-fit: contain;
 }
 
 .project-content {
