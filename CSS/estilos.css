@@ -49,7 +49,7 @@ body {
 
   background: 
     url("../imagenes/fondo/patterns/fondo2.jpg") repeat center / 40px 40px, /* Patrón optimizado */
-    linear-gradient(to bottom, #488199, #506d75, #336a81);
+    linear-gradient(to bottom, #488199, #4e8b51, #a87438);
 
   background-blend-mode: soft-light;
   background-attachment: fixed; /* Intenta fixed, y haz fallback en móviles */
@@ -105,14 +105,14 @@ nav.navbar a.nav-link.active {
 
 section{
   padding: 5rem 5%;
-  background-color: rgba(0,0,0,0.2); /* tono semitransparente para evitar parches */
+  background-color: rgba(0,0,0,0); /* tono semitransparente para evitar parches */
 }
 /************************************/
 /**********  SECCIÓN HOME ***********/
 /************************************/
 
 section#Home {
-  background-color: rgba(0,0,0,0.2); /* tono semitransparente para evitar parches */
+  background-color: rgba(0,0,0,0); /* tono semitransparente para evitar parches */
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;
@@ -193,13 +193,20 @@ div.home-img img {
   border-radius: 50%;
   box-shadow: 0 0 30px 5px rgb(252, 250, 250);
   cursor: pointer;
-  transition: transform 1s linear, box-shadow 1s linear; /* Aplica transición solo en las propiedades necesarias */
-  will-change: transform, box-shadow; /* Acelera la animación con hardware */
+  rotate: 0deg;
+  will-change: rotate, box-shadow; /* Acelera la animación con hardware */
+}
+
+/* Animación */
+@keyframes girarBounce {
+  0% { rotate: 0deg; }
+  80% { rotate: 380deg; } /* un poco más de 360 */
+  100% { rotate: 360deg; } /* vuelve al final exacto */
 }
 
 .home-img img:hover {
   box-shadow: 0 0 50px 5px rgb(236, 129, 68);
-  transform: rotate(360deg) scale(1.05);
+  animation: girarBounce 1.2s ease-in-out forwards; /* una vez, se queda en el estado final */
 }
 
 .home-iconos-redes {
@@ -719,7 +726,7 @@ a.anchor-contact-icon i {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    background-attachment: scroll; /* en móviles */
+    background-attachment: fixed; /* en móviles */
   }
 
   header {
@@ -796,7 +803,7 @@ a.anchor-contact-icon i {
   /************************************/
 
   section#Home {
-    background-color: rgba(0,0,0,0.2); /* tono semitransparente para evitar parches */
+    background-color: rgba(0,0,0,0); /* tono semitransparente para evitar parches */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -878,13 +885,20 @@ a.anchor-contact-icon i {
     border-radius: 50%;
     box-shadow: 0 0 30px 5px rgb(252, 250, 250);
     cursor: pointer;
-    transition: transform 1s linear, box-shadow 1s linear; /* Aplica transición solo en las propiedades necesarias */
-    will-change: transform, box-shadow; /* Acelera la animación con hardware */
+    rotate: 0deg;
+    will-change: rotate, box-shadow; /* Acelera la animación con hardware */
   }
+
+  /* Animación */
+@keyframes girarBack {
+  0% { rotate: 0deg; }
+  50% { rotate: 180deg; }
+  100% { rotate: 0deg; } /* regresa a su posición */
+}
 
   .home-img img:hover {
     box-shadow: 0 0 50px 5px rgb(236, 129, 68);
-    transform: rotateY(180deg);
+    animation: girarBack 1s ease-in-out; /* una vez, se queda en el estado final */
   }
 
   .home-iconos-redes {
@@ -1350,6 +1364,7 @@ a.anchor-contact-icon i {
     min-height: 100vh;
     overflow-x: hidden;
     color: white;
+    background-attachment: fixed; /* en móviles */
   }
 
   header {
@@ -1436,7 +1451,7 @@ a.anchor-contact-icon i {
   /************************************/
 
   section#Home {
-    background-color: rgba(0,0,0,0.2); /* tono semitransparente para evitar parches */
+    background-color: rgba(0,0,0,0); /* tono semitransparente para evitar parches */
     height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -1522,6 +1537,7 @@ a.anchor-contact-icon i {
 
   div.home-img {
     border-radius: 50%;
+    
   }
 
   div.home-img img {
@@ -1530,13 +1546,20 @@ a.anchor-contact-icon i {
     border-radius: 50%;
     box-shadow: 0 0 30px 5px rgb(252, 250, 250);
     cursor: pointer;
-    transition: transform 1s linear, box-shadow 1s linear; /* Aplica transición solo en las propiedades necesarias */
-    will-change: transform, box-shadow; /* Acelera la animación con hardware */
+    rotate: 0deg;
+    transition: box-shadow 1s linear; /* Aplica transición solo en las propiedades necesarias */
+    will-change: rotate, box-shadow; /* Acelera la animación con hardware */
   }
+
+  @keyframes girarBack {
+    0% { rotate: 0deg; }
+    80% { rotate: -380deg; } 
+    100% { rotate: -360deg; }
+    }
 
   .home-img img:hover {
     box-shadow: 0 0 50px 5px rgb(236, 129, 68);
-    transform: rotateY(180deg);
+    animation: girarBack 0.8s linear forwards;
   }
 
   .home-iconos-redes {
