@@ -38,6 +38,7 @@ html {
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
+  transition-behavior: smooth !important;
 }
 
 body {
@@ -403,7 +404,7 @@ div.main-content-section img:hover {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 30px;
   padding: 40px;
   width: 100%;
@@ -418,7 +419,8 @@ div.main-content-section img:hover {
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.3s ease;
-  max-width: 525px;
+  max-width: 550px;
+  height: 100%;
 }
 
 .project-card:hover {
@@ -426,16 +428,16 @@ div.main-content-section img:hover {
 }
 
 .project-image {
-  height: auto;
-  min-height: 350px;
-  width: 100%;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  background: rgba(255,255,255,0.03); /* opcional, para contraste */
 }
 
 .project-image img {
-  width: 100%;
-  height: 350px;
-  padding: 10px;
+  max-width: 100%;
+  max-height: 300px; /* ajustá según tu diseño */
   object-fit: contain;
 }
 
@@ -456,7 +458,7 @@ div.main-content-section img:hover {
 .project-description {
   font-size: 1.5rem;
   line-height: 1.6;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #ddd;
 }
 
@@ -464,7 +466,7 @@ div.main-content-section img:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   justify-content: center;
 }
 
@@ -714,7 +716,8 @@ a.anchor-contact-icon i {
 /************* PRINCIPIO DE MEDIA QUERIES *******************/
 /************************************************************/
 
-@media all and (min-width: 600px) and (max-width: 1200px) {
+
+@media all and (min-width: 992px) and (max-width: 1200px) {
   html {
     font-size: 62.5%;
     width: 100%;
@@ -1068,7 +1071,7 @@ a.anchor-contact-icon i {
 
   div.projects {
     display: grid;
-    grid-template-columns: 1fr; /*grid de 1 columna*/
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 20px;
     align-items: stretch;
@@ -1351,6 +1354,15 @@ a.anchor-contact-icon i {
   }
 }
 
+@media all and (min-width: 600px) and (max-width: 991px) {
+  .project {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
 @media all and (max-width: 599px) {
   html {
     font-size: 62.5%;
@@ -1364,7 +1376,7 @@ a.anchor-contact-icon i {
     min-height: 100vh;
     overflow-x: hidden;
     color: white;
-    background-attachment: fixed; /* en móviles */
+    background-attachment: scroll; /* en móviles */
   }
 
   header {
@@ -1879,6 +1891,22 @@ a.anchor-contact-icon i {
     display: block; /* Asegura que ocupe solo el ancho necesario */
     text-align: center; /* Mantiene el texto centrado */
   }
+
+  .project-image {
+    height: auto;
+    min-height: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+    
+    padding: 10px;
+    object-fit: contain;
+  }
+
 
   /****************************************/
   /**********  SECCIÓN CONTACT ***********/

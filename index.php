@@ -65,7 +65,7 @@ if (isset($_GET['status'])) {
   <header>
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container-fluid">
-        <a href="index.php#Home" class="navbar-brand logo ms-2">{ Hola Mundo! }</a>
+        <a href="index.php#Home" class="navbar-brand logo ms-2">{ jahcr1 }</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
