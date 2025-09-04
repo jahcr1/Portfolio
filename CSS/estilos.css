@@ -53,7 +53,7 @@ body {
     linear-gradient(to bottom, #488199, #4e8b51, #a87438);
 
   background-blend-mode: soft-light;
-  background-attachment: fixed; /* Intenta fixed, y haz fallback en móviles */
+  background-attachment: scroll; /* Intenta fixed, y haz fallback en móviles */
 }
 
 header {
@@ -729,7 +729,7 @@ a.anchor-contact-icon i {
     width: 100%;
     min-height: 100vh;
     overflow-x: hidden;
-    background-attachment: fixed; /* en móviles */
+    background-attachment: scroll; /* en móviles */
   }
 
   header {
