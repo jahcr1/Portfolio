@@ -72,6 +72,22 @@ nav.navbar {
   transition: transform 0.3s ease-in-out;
 }
 
+button.navbar-toggler {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  margin-left: auto;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid rgb(236, 129, 60);
+}
+
+span.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='rgb(236,129,68)' class='bi bi-list' viewBox='0 0 16 16'%3E%3Cpath stroke-width='2' fill-rule='evenodd' d='M2 12h12v1H2v-1zm0-5h12v1H2V7zm0-5h12v1H2V2z'/%3E%3C/svg%3E");
+  width: 30px;
+  height: 30px;
+}
+
 nav.navbar a.navbar-brand.logo {
   padding: 0 0 0 100px;
   font-size: 3rem;
@@ -381,6 +397,7 @@ div.main-content-section {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 55px;
 }
 
@@ -408,6 +425,7 @@ div.main-content-section img:hover {
   gap: 30px;
   padding: 40px;
   width: 100%;
+  justify-items: center;
   
 }
 
@@ -419,7 +437,7 @@ div.main-content-section img:hover {
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.3s ease;
-  max-width: 550px;
+  max-width: 600px;
   height: 100%;
 }
 
@@ -431,55 +449,69 @@ div.main-content-section img:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 250px;
+  height: 300px; /* fija el alto, no solo min-height */
   background: rgba(255,255,255,0.03); /* opcional, para contraste */
 }
 
 .project-image img {
   max-width: 100%;
+  height: auto;
   max-height: 300px; /* ajustá según tu diseño */
   object-fit: contain;
+  display: block;
 }
 
 .project-content {
   padding: 20px;
-  flex: 1;
-  display: flex;
+  display: flex !important;
   flex-direction: column;
+  flex-grow: 1; /* para que ocupe todo el espacio disponible */
 }
 
 .project-title {
   font-size: 2.2rem;
   font-family: "Michroma", serif;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   color: #fff;
+  text-align: center;
+  
 }
 
 .project-description {
+
   font-size: 1.5rem;
   line-height: 1.6;
   margin-bottom: 15px;
   color: #ddd;
+  flex-grow: 1 !important; /* Ocupa todo el espacio disponible dentro de el contenedor */
 }
 
 .tech-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 15px;
   margin-bottom: 15px;
   justify-content: center;
+  align-items: center;
+  padding: 15px;
+  min-height: 50px; /* altura mínima para que no colapse si no hay iconos */
 }
 
 .tech-icons svg {
-  width: 45px;
-  height: 45px;
-  fill: #f0f0f0;
+  width: 50px;
+  height: 50px;
+  
+}
+
+.tech-icons img {
+  width: 50px;
+  height: 50px;
 }
 
 .project-links {
+  margin-top: auto; /* 👈 asegura que siempre se vaya al fondo */
   display: flex;
   gap: 15px;
-  margin-top: auto;
   justify-content: center;
 }
 
@@ -1050,6 +1082,7 @@ a.anchor-contact-icon i {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 35px;
   }
 
@@ -1069,12 +1102,15 @@ a.anchor-contact-icon i {
   /**********  SECCIÓN PROYECTOS ***********/
   /*****************************************/
 
-  div.projects {
+  .projects {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-    align-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px; /* más compacto en este rango */
+    padding: 20px; /* opcional */
+  }
+
+  .project-card {
+    max-width: 400px;
   }
 
   div.container {
@@ -1086,28 +1122,12 @@ a.anchor-contact-icon i {
     overflow: hidden;
   }
 
-  /*  estilos para cada caja contenedor de un proyecto*/
-  div.main-content-project {
-    background-color: rgb(46, 48, 48);
-    padding: 20px;
-    border: 1px solid darkgoldenrod;
-    display: flex;
-    flex-direction: column; /* Organiza los elementos verticalmente */
-    justify-content: space-evenly; /* Distribuye espacio entre los elementos */
-    flex-grow: 1; /* Ocupa todo el espacio disponible dentro de cada celda del grid */
-  }
-
-  h5.project-name {
-    font-size: 3rem;
-    color: white;
-    text-shadow: -2px -2px black;
-  }
 
   p.project-description {
     padding: 15px 0;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-style: normal;
-    letter-spacing: 0.8px;
+    letter-spacing: normal;
   }
 
   div.body-content-project {
@@ -1146,12 +1166,13 @@ a.anchor-contact-icon i {
   }
 
   div.tech-icons {
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 20px;
     justify-content: space-evenly;
+    align-items: center;
   }
 
   .foot-project {
@@ -1355,9 +1376,32 @@ a.anchor-contact-icon i {
 }
 
 @media all and (min-width: 600px) and (max-width: 991px) {
-  .project {
+  .projects {
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  div.navbar-collapse {
+    padding-right: 10px;
+    text-align: end;
+  }
+  nav.navbar a.nav-link {
+    font-size: 2rem;
+    color: white;
+    
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border: 3px solid transparent;
+    display: inline-block;
+  }
+
+  nav.navbar a.nav-link:hover,
+  nav.navbar a.nav-link.active {
+    color: rgb(236, 129, 68);
+    border-bottom: 3px solid rgb(236, 129, 68);
+    
   }
 
 }
@@ -1426,7 +1470,7 @@ a.anchor-contact-icon i {
   }
 
   div.navbar-collapse {
-    padding-right: 2px;
+    padding-right: 10px;
     text-align: end;
   }
   nav.navbar a.nav-link {
@@ -1749,6 +1793,7 @@ a.anchor-contact-icon i {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 35px;
   }
 
@@ -1801,13 +1846,6 @@ a.anchor-contact-icon i {
     overflow: hidden; /* Oculta cualquier desbordamiento inesperado */
   }
 
-  h5.project-name {
-    font-family: "Michroma", serif;
-    font-size: 2rem;
-    color: white;
-    text-shadow: -2px -2px black;
-    word-break: break-word; /* Asegura que el texto no desborde */
-  }
 
   p.project-description {
     padding: 15px 0;
@@ -1863,6 +1901,7 @@ a.anchor-contact-icon i {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: space-evenly;
+    align-items: center;
   }
 
   div.tech-icons svg {
