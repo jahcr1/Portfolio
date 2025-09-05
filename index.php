@@ -1185,7 +1185,7 @@ if (isset($_GET['status'])) {
       const pagination = document.getElementById("pagination");
       let currentPage = 1;
 
-      function showPage(page) {
+      function showPage(page, doScroll = true) {
         projects.forEach(p => p.style.display = "none"); // ocultar todos
 
         const start = (page - 1) * itemsPerPage;
@@ -1202,11 +1202,11 @@ if (isset($_GET['status'])) {
           btn.classList.toggle("active", idx + 1 === page);
         });
 
-        // 👇 scroll al inicio de la sección
-        const section = document.getElementById("Proyectos");
-        section.scrollIntoView({
-          behavior: "smooth"
-        });
+        // 👇 Solo hacer scroll si fue un click de usuario
+        if (doScroll) {
+          const section = document.getElementById("Proyectos");
+          section.scrollIntoView({ behavior: "smooth" });
+        }
 
         // 👇 refrescar AOS para recalcular posiciones
         AOS.refresh();
@@ -1224,8 +1224,8 @@ if (isset($_GET['status'])) {
         pagination.appendChild(btn);
       }
 
-      // mostrar primera página
-      showPage(currentPage);
+      // mostrar primera página SIN scroll
+      showPage(currentPage, false);
     });
   </script>
 
